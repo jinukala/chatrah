@@ -1,0 +1,9 @@
+django
+django-summernote
+django-otp
+django-admin-honeypot
+whitenoise
+Pillow
+pyscopg-binary2
+gunicorn
+django-pwa

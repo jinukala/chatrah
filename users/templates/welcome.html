@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% load pwa %}
+<head>
+  <title>Chatrah</title>
+  {% progressive_web_app_meta %}
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>#page-container {
+  position: relative;
+  min-height: 100vh;
+  font-size: 9vw;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem; 
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+</style>
+</head>
+<body id="page-container">
+<div id="content-wrap">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'signup' %}">Register</a>
+      <a class="navbar-brand" href="{% url 'login' %}">Login</a>
+  </div>
+</nav>
+<header class="jumbotron" style="background-color: white; color: black;">
+    <div class="container">
+                    <h1 class="h2"> Welcome to <strong> Chatrah</strong></h1>
+                    <p class="h6">A Student Portal</p>
+                </div>
+</header>
+<div class="card-body">
+</div>
+</div>
+<footer class="text-center h3" id="footer">&copy; Kushwanth Reddy</footer>
+</body>
+</html>

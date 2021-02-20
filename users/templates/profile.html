@@ -1,0 +1,46 @@
+<!doctype HTML>
+<html>
+{% load pwa %}
+<head>
+{% progressive_web_app_meta %}
+<title>Profile |  Chatrah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style type="text/css">
+#welcome {
+    height: 29vh;
+}
+#name {
+    font-size: 3vw;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+  <h3 class="h3"> Chatrah</h3>
+  <div class="justify-content-end">
+  <a class="btn" href="{% url 'apply' %}">Leave</a>
+  <a class="btn" href="{% url 'dashboard' %}">Updates</a>
+  <a class="btn" href="/paper">Paper</a>
+  <a class="btn" href="{% url 'credits' %}">credits</a>
+  <a class="btn" href="{% url 'timetable' %}">Timetable</a>
+  <a class="btn" href="{% url 'logout' %}">Logout</a>
+  </div></nav>
+<h1 align="center">Profile</h1>
+<header class="jumbotron" id="welcome">
+    <div class="container">
+                    <h1 class="h1"> Welcome <strong id="name">{{ name }}</strong></h1>
+    </div>
+</header>
+<div class="container" style="width: 100%; align-content:center;">
+              <div class="card">
+                <div class="card-body">
+                      <p class="h4">Roll Number       : {{number}}</p>
+                      <p class="h4">Year of Admission : {{YoA}}</p>
+                      <p class="h4">Present Year      : {{year}}</p>
+                      <p class="h4">Department        : {{dept}}</p>
+                      <p class="h4">Section           : {{section}}</p>
+                </div>
+              </div>
+</body>
+</html>

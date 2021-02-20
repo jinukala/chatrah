@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+{% load pwa %}
+<head>
+  <title>Updates</title>
+  {% progressive_web_app_meta %}
+<link rel="icon" href="/static/icons/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem; 
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+</style>
+</head>
+<body id="page-container">
+<div id="content-wrap">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'profile' %}">Profile</a>
+      <a class="navbar-brand" href="{% url 'classupdates' %}">Class Updates</a>
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 left">
+            {% for key, value in dash.items %}
+            {% for post in value %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">{{ post.title }}</h3>
+                    <p class="card-text">{{ post.date }}</p>
+                    <p class="card-text">{{ post.content | safe }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+<footer class="text-center h3" id="footer">Up to Date</footer>
+</body>
+</html>
