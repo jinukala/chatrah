@@ -22,6 +22,7 @@ depts = [
     ]
 
 class timetables(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50, default="TimeTable")
     year = models.IntegerField(choices=years, default=1)
     dept = models.IntegerField(choices=depts, default=1)
@@ -33,6 +34,7 @@ class timetables(models.Model):
     
 
 class credits(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50, default="Credit")
     year = models.IntegerField(choices=years, default=1)
     dept = models.IntegerField(choices=depts, default=1)

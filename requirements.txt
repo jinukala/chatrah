@@ -4,6 +4,6 @@ django-otp
 django-admin-honeypot
 whitenoise
 Pillow
-pyscopg-binary2
+psycopg2-binary
 gunicorn
 django-pwa

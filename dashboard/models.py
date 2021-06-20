@@ -24,6 +24,7 @@ class notify(models.Model):
         (7, "EIE"),
         (8, "ALL"),
     ]
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200, unique=True)
     time = models.DateTimeField(auto_now= True)
     content = models.TextField(max_length=750)

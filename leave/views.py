@@ -10,7 +10,10 @@ from django.shortcuts import get_object_or_404
 def apply_leave(request):
     userid = get_user(request)
     if request.method == "GET":
-        return render(request, "apply.html")
+        if leave.objects.filter(number=userid).exists():
+            return redirect("/leave/status")
+        else:
+            return render(request, "apply.html")
     title = request.POST["title"]
     reason = request.POST["reason"]
     user = students.objects.get(number=userid)
